@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="../shared/bootstrap.css">
+    <script src="../shared/D3.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <p>hello world 1</p>
+
+    <p>hello world 2</p>
+</div>
+
+<script>
+    var ps = document.getElementsByTagName("p");
+    for (var i = 0; i < ps.length; i++) {
+        var p = ps.item(i);
+        p.innerHTML = "I like d3!";
+    }
+
+</script>
+</body>
+</html>
