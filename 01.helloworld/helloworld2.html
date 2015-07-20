@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="../shared/bootstrap.css">
+    <script src="../shared/d3.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <p>hello world 1</p>
+
+    <p>hello world 2</p>
+</div>
+
+<script>
+    //选择器
+    var p = d3.selection(".container")
+            .selectAll("p")
+            .text("www.d3js.com");
+
+    //修改样式
+    p.style("color","red").style("font-size","5em");
+</script>
+</body>
+</html>
