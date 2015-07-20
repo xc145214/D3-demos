@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>data-bind</title>
+    <link rel="stylesheet" href="../shared/bootstrap.css">
+    <script src="../shared/d3.js"></script>
+</head>
+<body>
+<div class="container">
+    <p>hello world 1</p>
+
+    <p>hello world 2</p>
+
+    <p>hello world 3</p>
+</div>
+<script>
+    //data set
+    var set = ["I like dog", "I like cat", "I like snake"];
+
+    //selecter
+    var ps = d3.selection(".container").selectAll("p");
+
+    //bind-data
+    ps.data(set).text(function (d, i) {
+        return d;
+    })
+
+
+    //no bind data
+//    ps.text("china")
+</script>
+</body>
+</html>
