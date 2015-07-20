@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>data-bind</title>
+    <link rel="stylesheet" href="../shared/bootstrap.css">
+    <script src="../shared/d3.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>This is a cat.</h1>
+
+    <h1>That is a dog.</h1>
+
+    <h1>I like cat.</h1>
+</div>
+<script>
+    //select 选择第一个元素
+    var body = d3.select("body");
+    var h1 = body.select("h1");
+
+    //selectAll 选择所有元素
+    var all_h1 = body.selectAll("h1");
+
+    h1.style("color", "red");
+
+    //console.log(all_h1);
+
+    all_h1.style("color", "blue");
+
+    //添加元素
+    var new_h1 = body.append("h1");
+    new_h1.text("append new h1");
+
+    //删除元素
+    new_h1.remove();
+
+</script>
+</body>
+</html>
