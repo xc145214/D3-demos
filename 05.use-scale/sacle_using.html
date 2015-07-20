@@ -13,35 +13,29 @@
 
 </div>
 <script>
-    //宽 与 高
-    var width = 600;
-    var height = 600;
+    //一维数组最大值
+    var dataset1 = [30, 20, 52, 2, 11];
 
-    //创件svg元素
-    var svg = d3.select(".container")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height);
+    var result = d3.max(dataset1);   //获取数据的最大值
 
-    //创建数据集
-    var dataset = [30, 20, 45, 12, 21];
+    console.log(result);//
 
-    var wx = d3.scale.linear()  //  生成线性比例尺
-            .domain([0, d3.max(dataset)])   //获取最大值
-            .range([0, 500]);
+    //二维数组的第二列最大值
+    var dataset2 = [
+        [30, 20],
+        [52, 2],
+        [90, 11]
+    ];
+    var result = d3.max(dataset2, function (d) {
+        return d[1];
+    });
+
+    console.log(result);//
 
 
-    svg.selectAll("rect")
-            .data(dataset)  //绑定数据集
-            .enter()        //自动添加位置，与数据集相同
-            .append("rect")
-            .attr("x", 10)  //设置属性
-            .attr("y", function (d, i) {
-                return i * 30;
-            })
-            .attr("width", wx)
-            .attr("height", 28)
-            .attr("fill", "red");
+
+
+
 </script>
 </body>
 </html>
