@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>data-bind</title>
+    <link rel="stylesheet" href="../shared/bootstrap.css">
+    <script src="../shared/d3.js"></script>
+</head>
+<body>
+<div class="container">
+    <p>AAAAAAAAA</p>
+
+    <p>BBBBBBBBB</p>
+
+    <p>CCCCCCCCC</p>
+</div>
+<script>
+    //data set
+    var set = [10, 20, 30, 40, 50];
+
+    var update = d3.select(".container").selectAll("p").data(set);
+
+    var enter = update;
+
+    update.text(function (d, i) {
+        return "update " + d;
+    });
+
+    enter.enter()
+            .append("p")
+            .text(function (d, i) {
+                return "enter " + d;
+            })
+
+
+</script>
+</body>
+</html>
